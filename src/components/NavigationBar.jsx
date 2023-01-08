@@ -1,11 +1,12 @@
 import "../css/NavigationBar.css"
 import React, { useState } from "react"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { MdFoodBank } from "react-icons/md"
 import { IconContext } from "react-icons"
 
 function NavigationBar() {
   const [searchQuery, setSearchQuery] = useState("")
+  let navigate = useNavigate()
 
   function handleChange(event) {
     setSearchQuery(event.target.value)
@@ -13,6 +14,11 @@ function NavigationBar() {
 
   function handleSubmit(event) {
     event.preventDefault()
+    navigate(`/recipes/${searchQuery}`)
+  }
+
+  function restartSearchQuery() {
+    setSearchQuery("")
   }
 
   return (
@@ -21,7 +27,7 @@ function NavigationBar() {
         <li>
           <Link to="/">
             <IconContext.Provider value={{ color: "white", size: "40px" }}>
-              <MdFoodBank></MdFoodBank>
+              <MdFoodBank onClick={restartSearchQuery}></MdFoodBank>
             </IconContext.Provider>
           </Link>
         </li>
