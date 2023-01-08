@@ -1,0 +1,35 @@
+.page {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgb(214, 212, 212);
+  z-index: -10;
+}
+.picture {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  margin-top: 30vh;
+  margin-left: 15vw;
+  margin-bottom: 50vh;
+  margin-right: 15vw;
+  height: 50%;
+  background-image: url(https://recipebook.io/public/images/5.jpg);
+  background-repeat: no-repeat, no-repeat;
+  background-size: 100%;
+  border-radius: 20px;
+}
+
+.picture h1 {
+  font-size: 7vh;
+  color: white;
+}
+
+.picture h2 {
+  font-size: 4vh;
+  color: white;
+}
