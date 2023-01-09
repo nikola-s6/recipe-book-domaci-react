@@ -7,7 +7,7 @@ import Pagination from "./Pagination"
 
 function Recipes() {
   const { searchQuery } = useParams()
-  const [recipes, setRecipes] = useState(fakeRecipeGroup.results)
+  const [recipes, setRecipes] = useState([])
   const [currentPage, setCurrentPage] = useState(1)
   const [recipesPerPage, setRecipesPerPage] = useState(4)
 
@@ -19,6 +19,14 @@ function Recipes() {
     }
     number()
   }, [height])
+
+  useEffect(() => {
+    async function fetchData() {
+      const results = await getRecipes(searchQuery)
+      setRecipes(results)
+    }
+    fetchData()
+  }, [searchQuery])
 
   //ovde pisati logiku za paginaciju
   //proslediti trenutne recepte nekom komponentru grupa recepata
@@ -42,6 +50,20 @@ function Recipes() {
       </div>
     </div>
   )
+}
+
+async function getRecipes(query) {
+  const API_KEY = process.env.REACT_APP_API_KEY
+  const API_ENDPOINT = "https://api.spoonacular.com/recipes/search"
+  const url = `${API_ENDPOINT}?query=${query}&apiKey=${API_KEY}`
+
+  try {
+    const response = await fetch(url)
+    const data = await response.json()
+    return data.results
+  } catch (error) {
+    console.error(error)
+  }
 }
 
 export default Recipes

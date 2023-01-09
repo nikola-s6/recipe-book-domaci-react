@@ -6,16 +6,15 @@ import { fakeRecipe } from "../fakeRecipe"
 
 function SpecificRecipe() {
   const { id } = useParams()
-  const [recipe, setRecipe] = useState(fakeRecipe)
+  const [recipe, setRecipe] = useState({})
 
-  //   useEffect(() => {
-  //     async function fetchData() {
-  //       const result = await getRecipe(id)
-  //       setRecipe(result)
-  //     }
-  //     fetchData()
-  //   }, [id])
-  console.log(recipe.title)
+  useEffect(() => {
+    const fetchRecipes = async () => {
+      const result = await getRecipe(id)
+      setRecipe(result)
+    }
+    fetchRecipes()
+  }, [id])
 
   return (
     <div className="background">
@@ -54,16 +53,17 @@ function SpecificRecipe() {
 }
 
 async function getRecipe(id) {
-  //     const API_KEY = process.env.REACT_APP_API_KEY
-  //   const API_ENDPOINT = "https://api.spoonacular.com/recipes"
-  //   const url = `${API_ENDPOINT}/${id}/information?apiKey=${API_KEY}`
-  //   try {
-  //     const response = await fetch(url)
-  //     const data = await response.json()
-  //     return data
-  //   } catch (error) {
-  //     console.error(error)
-  //   }
+  console.log("usao")
+  const API_KEY = process.env.REACT_APP_API_KEY
+  const API_ENDPOINT = "https://api.spoonacular.com/recipes"
+  const url = `${API_ENDPOINT}/${id}/information?apiKey=${API_KEY}`
+  try {
+    const response = await fetch(url)
+    const data = await response.json()
+    return data
+  } catch (error) {
+    console.error(error)
+  }
 }
 
 export default SpecificRecipe
