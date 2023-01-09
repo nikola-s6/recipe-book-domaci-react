@@ -1,4 +1,4 @@
-nav {
+.navigationBar {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -7,12 +7,12 @@ nav {
   padding: 10px 20px;
 }
 
-nav .search-form {
+.navigationBar .search-form {
   display: flex;
   align-items: center;
 }
 
-nav .search-text {
+.navigationBar .search-text {
   width: 200px;
   height: 30px;
   padding: 0 10px;
@@ -21,7 +21,7 @@ nav .search-text {
   border-radius: 4px;
 }
 
-nav .search-button {
+.navigationBar .search-button {
   width: 70px;
   height: 30px;
   font-size: 16px;
@@ -34,22 +34,22 @@ nav .search-button {
   margin-left: 10px;
 }
 
-nav ul {
+.navigationBar ul {
   display: flex;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-nav li {
+.navigationBarigationBar li {
   margin: 0 10px;
 }
 
-nav a {
+.navigationBarigationBar a {
   color: #fff;
   text-decoration: none;
 }
 
-nav a:hover {
+.navigationBarigationBar a:hover {
   color: #ccc;
 }

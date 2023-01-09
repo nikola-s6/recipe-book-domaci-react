@@ -7,9 +7,17 @@
   bottom: 0;
   left: 0;
   right: 0;
+  z-index: -10;
+}
+.searchPage .search-result-text {
+  margin-top: 70px;
 }
 .searchPage .result {
   width: 100%;
   height: auto;
   background-color: rgb(214, 212, 212);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

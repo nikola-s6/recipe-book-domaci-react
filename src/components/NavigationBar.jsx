@@ -22,7 +22,7 @@ function NavigationBar() {
   }
 
   return (
-    <nav>
+    <nav className="navigationBar">
       <ul>
         <li>
           <Link to="/">

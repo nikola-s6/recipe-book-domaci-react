@@ -3,12 +3,11 @@ import { fakeRecipeGroup } from "../fakeRecipeGroup"
 import Recipe from "./Recipe"
 import "../css/RecipeGroup.css"
 
-function RecipeGroup() {
-  const list = fakeRecipeGroup.results
+function RecipeGroup({ recipes }) {
   return (
     <div className="container">
-      {list.map((recipe) => (
-        <Recipe data={recipe}></Recipe>
+      {recipes.map((recipe) => (
+        <Recipe data={recipe} key={recipe.id}></Recipe>
       ))}
     </div>
   )
