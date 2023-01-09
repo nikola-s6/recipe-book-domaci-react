@@ -1,0 +1,15 @@
+.searchPage {
+  text-align: center;
+  padding-top: 15px;
+  background-color: rgb(214, 212, 212);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.searchPage .result {
+  width: 100%;
+  height: auto;
+  background-color: rgb(214, 212, 212);
+}

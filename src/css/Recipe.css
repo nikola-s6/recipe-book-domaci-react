@@ -1,0 +1,40 @@
+.oneRecipe {
+  background-color: rgb(137, 179, 128);
+  width: 50vw;
+  height: 150px;
+  border: 2px solid black;
+  border-radius: 10px;
+  display: flex;
+  margin-top: 10px;
+}
+
+.oneRecipe .pictureLeft {
+  flex: 1;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.oneRecipe .recipe-body {
+  flex: 2;
+  flex-grow: 12;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+  text-align: center;
+}
+
+.oneRecipe .button-details {
+  flex: 3;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: right;
+  align-items: center;
+  flex-shrink: 3;
+}
+.oneRecipe .button-details button {
+  height: 50px;
+  margin-right: 10px;
+  border-radius: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
