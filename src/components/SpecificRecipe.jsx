@@ -16,6 +16,11 @@ function SpecificRecipe() {
     fetchRecipes()
   }, [id])
 
+  if (JSON.stringify(recipe) === "{}") {
+    // return <h1>Loading</h1>
+    return <div className="loader"></div>
+  }
+
   return (
     <div className="background">
       <div className="title">

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import "../css/Recipes.css"
 import RecipeGroup from "./RecipeGroup"
-import { fakeRecipeGroup } from "../fakeRecipeGroup"
 import Pagination from "./Pagination"
 
 function Recipes() {
@@ -28,15 +27,16 @@ function Recipes() {
     fetchData()
   }, [searchQuery])
 
-  //ovde pisati logiku za paginaciju
-  //proslediti trenutne recepte nekom komponentru grupa recepata
-  //iz te grupe recepata prikazivati recepte preko komponente
-
   const indexOfLastRecipe = currentPage * recipesPerPage
   const indexOfFirstRecipe = indexOfLastRecipe - recipesPerPage
   const currentRecipe = recipes.slice(indexOfFirstRecipe, indexOfLastRecipe)
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber)
+
+  if (JSON.stringify(recipes) === "{}") {
+    return <h1>Loading</h1>
+  }
+
   return (
     <div className="searchPage">
       <h1 className="search-result-text">Search results for: {searchQuery}</h1>
