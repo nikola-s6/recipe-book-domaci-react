@@ -34,7 +34,8 @@ function Recipes() {
   const paginate = (pageNumber) => setCurrentPage(pageNumber)
 
   if (JSON.stringify(recipes) === "{}") {
-    return <h1>Loading</h1>
+    // return <h1>Loading</h1>
+    return <div className="loader"></div>
   }
 
   return (

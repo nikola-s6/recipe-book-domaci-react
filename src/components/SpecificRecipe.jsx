@@ -2,7 +2,6 @@ import React from "react"
 import { useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
 import "../css/SpecificRecipe.css"
-import { fakeRecipe } from "../fakeRecipe"
 
 function SpecificRecipe() {
   const { id } = useParams()
@@ -38,14 +37,18 @@ function SpecificRecipe() {
         <div className="ingredients">
           <h1>Ingredients:</h1>
           <table>
-            <th>Name:</th>
-            <th>Amount:</th>
-            {recipe.extendedIngredients.map((ing) => (
-              <tr>
-                <td>{ing.name}</td>
-                <td>{ing.amount + " " + ing.unit}</td>
-              </tr>
-            ))}
+            <thead>
+              <th>Name:</th>
+              <th>Amount:</th>
+            </thead>
+            <tbody>
+              {recipe.extendedIngredients.map((ing) => (
+                <tr>
+                  <td>{ing.name}</td>
+                  <td>{ing.amount + " " + ing.unit}</td>
+                </tr>
+              ))}
+            </tbody>
           </table>
         </div>
         <div className="prep">

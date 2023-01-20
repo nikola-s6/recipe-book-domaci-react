@@ -1,14 +1,8 @@
-@font-face {
-  font-family: "image-caption";
-  src: url(https://fonts.google.com/specimen/Bakbak+One);
-}
-@font-face {
-  font-family: "basic";
-  src: url(https://fonts.google.com/specimen/Comfortaa);
-}
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Open+Sans&family=Rubik:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Open+Sans&display=swap");
 
 * {
   margin: 0;
   border: 0;
-  font-family: "basic";
+  font-family: "Open Sans", sans-serif;
 }
